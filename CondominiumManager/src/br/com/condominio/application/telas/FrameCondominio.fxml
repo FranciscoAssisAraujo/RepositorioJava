@@ -5,24 +5,23 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.condominio.application.controllers.FrameCondominioController">
    <children>
       <MenuBar layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="574.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Incluir">
+          <Menu fx:id="incluirMenu" mnemonicParsing="false" text="Incluir">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem fx:id="incluirMenuItem" mnemonicParsing="false" onAction="#incluir" text="Incluir" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Excluir">
+          <Menu fx:id="excluirMenu" mnemonicParsing="false" text="Excluir">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem fx:id="excluirMenuItem" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Editar">
+            <Menu fx:id="editarMenu" mnemonicParsing="false" text="Editar">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem fx:id="editarMenuItem" mnemonicParsing="false" onAction="#editar" text="Editar" />
               </items>
             </Menu>
           <Menu mnemonicParsing="false" text="Help">
@@ -36,19 +35,19 @@
       <Pane layoutX="14.0" layoutY="46.0" prefHeight="313.0" prefWidth="574.0">
          <children>
             <Label layoutX="32.0" layoutY="27.0" text="ID: " />
-            <TextField fx:id="idTextField" layoutX="56.0" layoutY="23.0" prefHeight="25.0" prefWidth="66.0" />
+            <TextField fx:id="idTextField" editable="false" layoutX="56.0" layoutY="23.0" prefHeight="25.0" prefWidth="66.0" />
             <Label layoutX="256.0" layoutY="27.0" text="CNPJ:" />
-            <TextField fx:id="cnpjTextField" layoutX="296.0" layoutY="23.0" />
+            <TextField fx:id="cnpjTextField" editable="false" layoutX="296.0" layoutY="23.0" />
             <Label layoutX="38.0" layoutY="71.0" text="Nome:" />
-            <TextField fx:id="nomeTexteField" layoutX="94.0" layoutY="67.0" prefHeight="25.0" prefWidth="474.0" />
+            <TextField fx:id="nomeTexteField" editable="false" layoutX="94.0" layoutY="67.0" prefHeight="25.0" prefWidth="474.0" />
             <Label layoutX="35.0" layoutY="127.0" text="Endereço :" />
             <Label layoutX="30.0" layoutY="185.0" text="Sindico" />
             <Label layoutX="286.0" layoutY="185.0" text="Sub-Sindico" />
             <Label layoutX="35.0" layoutY="236.0" text="Conselho Fiscal" />
-            <TextArea fx:id="conselhoFiscalTextArea" layoutX="36.0" layoutY="253.0" prefHeight="58.0" prefWidth="518.0" />
-            <TextField fx:id="enderecoTexteField" layoutX="98.0" layoutY="123.0" prefHeight="25.0" prefWidth="467.0" />
-            <TextField fx:id="sindicoTextField" layoutX="76.0" layoutY="181.0" prefHeight="25.0" prefWidth="203.0" />
-            <TextField fx:id="subSindicoTextField" layoutX="358.0" layoutY="181.0" prefHeight="25.0" prefWidth="203.0" />
+            <TextArea fx:id="conselhoFiscalTextArea" editable="false" layoutX="36.0" layoutY="253.0" prefHeight="58.0" prefWidth="518.0" />
+            <TextField fx:id="enderecoTexteField" editable="false" layoutX="98.0" layoutY="123.0" prefHeight="25.0" prefWidth="467.0" />
+            <TextField fx:id="sindicoTextField" editable="false" layoutX="76.0" layoutY="181.0" prefHeight="25.0" prefWidth="203.0" />
+            <TextField fx:id="subSindicoTextField" editable="false" layoutX="358.0" layoutY="181.0" prefHeight="25.0" prefWidth="203.0" />
          </children>
       </Pane>
    </children>
