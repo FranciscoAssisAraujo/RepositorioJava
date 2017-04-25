@@ -9,6 +9,7 @@ public class CondominioPO {
 	private String sindico;		
 	private String subsindico;		
 	private String conselheirofiscal;
+	
 	public Long getId() {
 		return id;
 	}
