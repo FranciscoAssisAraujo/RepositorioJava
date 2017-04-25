@@ -1,7 +1,6 @@
 package br.com.condominio.application.controllers;
 
 import java.net.URL;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
 import br.com.condominio.application.Main;
@@ -12,9 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.ButtonType;
+import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
@@ -67,29 +64,43 @@ public class FrameCondominioController implements Initializable {
 	private TextField sindicoTextField;
 
 	@FXML
+	private Button buttonCancelar;
+
+	@FXML
+	private Button buttonSalvar;
+
+	@FXML
 	void incluir(ActionEvent event) {
 
 		excluirMenu.setVisible(false);
-		editarMenu.setText("Salvar");
-		editarMenuItem.setText("Salvar");
-		editarMenu.setOnAction(new EventHandler<ActionEvent>() {
+		editarMenu.setVisible(false);
+		buttonSalvar.setVisible(true);
+		buttonCancelar.setVisible(true);
+		buttonSalvar.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent event) {
-				Alert alert = new Alert(AlertType.CONFIRMATION);
-				alert.setTitle("Condominio");
-				alert.setContentText("Tem certeza que quer adicionar novo condominio?");
-
-				Optional<ButtonType> result = alert.showAndWait();
-				if (result.get() == ButtonType.OK) {
-					System.out.println("Salvar");
-				}
-				editarMenu.setText("Editar");
-				editarMenuItem.setText("Editar");
+				System.out.println("Salvar");
 				excluirMenu.setVisible(true);
-				editarMenu.setOnAction(null);
+				editarMenu.setVisible(true);
+				buttonSalvar.setVisible(false);
+				buttonCancelar.setVisible(false);
 			}
+
 		});
+		buttonCancelar.setOnAction(new EventHandler<ActionEvent>() {
+			
+			public void handle(ActionEvent event) {
+				System.out.println("Cancelar");
+				excluirMenu.setVisible(true);
+				editarMenu.setVisible(true);
+				buttonSalvar.setVisible(false);
+				buttonCancelar.setVisible(false);
+
+			}
+
+		});
+
 	}
 
 	@FXML
@@ -99,7 +110,9 @@ public class FrameCondominioController implements Initializable {
 
 	@FXML
 	void editar(ActionEvent event) {
-System.out.println("Editar");
+
+		System.out.println("Editar");
+
 	}
 
 	public static void iniciarTela() throws Exception {
@@ -133,6 +146,7 @@ System.out.println("Editar");
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-
+		buttonSalvar.setVisible(false);
+		buttonCancelar.setVisible(false);
 	}
 }

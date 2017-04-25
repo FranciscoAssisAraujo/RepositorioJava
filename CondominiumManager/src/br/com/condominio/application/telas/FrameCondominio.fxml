@@ -50,5 +50,7 @@
             <TextField fx:id="subSindicoTextField" editable="false" layoutX="358.0" layoutY="181.0" prefHeight="25.0" prefWidth="203.0" />
          </children>
       </Pane>
+      <Button fx:id="buttonSalvar" layoutX="431.0" layoutY="365.0" mnemonicParsing="false" text="Salvar" />
+      <Button fx:id="buttonCancelar" layoutX="494.0" layoutY="365.0" mnemonicParsing="false" text="Cancelar" />
    </children>
 </AnchorPane>
