@@ -1,33 +1,20 @@
-package br.com.condominio.condominioVO;
+package br.com.condominio.condominioPO;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="condominio")
-public class CondominioVO {
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="id")
-	private int id;
-	@Column(name="nome")
-	String nome;	
-	@Column(name="cnpj")
-	String cnpj;
-	@Column(name="endereco")
-	String endereco;	
-	@Column(name="unidades")
-	Integer unidades;	
-	@Column(name="sindico")
-	String sindico;	
-	@Column(name="subsindico")
-	String subsindico;	
-	@Column(name="Conselheirofiscal")
-	String conselheirofiscal;
+public class CondominioPO {	
+	private Long id;	
+	private String nome;		
+	private String cnpj;	
+	private String endereco;		
+	private Integer unidades;		
+	private String sindico;		
+	private String subsindico;		
+	private String conselheirofiscal;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -70,22 +57,8 @@ public class CondominioVO {
 	public void setConselheirofiscal(String conselheirofiscal) {
 		this.conselheirofiscal = conselheirofiscal;
 	}
-	public int getId() {
-		return id;
-	}	
+	
+	
 }
 
 
-/*
- * @Entity
-@Table(name="agenda")
-public class AgendaVO {
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="id")
-	private int id;
-	@Column(name="atividade")
-	String atividade;	
-	Date date;
-}
-*/
