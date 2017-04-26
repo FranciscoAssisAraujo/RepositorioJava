@@ -28,7 +28,6 @@ import javafx.stage.WindowEvent;
 
 public class FrameCondominioController implements Initializable {
 	public static Stage stage;
-	public static Stage controlStage;
 	Persistencia pt = new Persistencia();
 	@FXML
 	private TextField idTextField;
@@ -136,42 +135,6 @@ public class FrameCondominioController implements Initializable {
 
 	}
 
-	public static void iniciarTela() throws Exception {
-		Stage stage = new Stage();
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(Main.class.getResource(Path.frameCondominio));
-		AnchorPane layout = loader.load();
-		Scene scene = new Scene(layout);
-		stage.setScene(scene);
-		stage.centerOnScreen();
-		FrameCondominioController.stage = stage;
-
-	}
-
-	public static void getTela(Stage cstage) throws Exception {
-		iniciarTela();
-
-		stage.show();
-
-		stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-
-			@Override
-			public void handle(final WindowEvent arg0) {
-				MenuPrincipalController.stage.setOpacity(1);
-
-			}
-		});
-
-		controlStage = cstage;
-	}
-
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		buttonSalvar.setVisible(false);
-		buttonCancelar.setVisible(false);
-		pesquisarCondominio.setVisible(false);
-	}
-
 	public void habilitarCampos(boolean on) {
 		nomeTexteField.setEditable(on);
 		enderecoTexteField.setEditable(on);
@@ -196,4 +159,40 @@ public class FrameCondominioController implements Initializable {
 		buttonCancelar.setVisible(on);
 		buttonSalvar.setVisible(on);
 	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		buttonSalvar.setVisible(false);
+		buttonCancelar.setVisible(false);
+		pesquisarCondominio.setVisible(false);
+	}
+
+	public static void iniciarTela() throws Exception {
+		Stage stage = new Stage();
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource(Path.frameCondominio));
+		AnchorPane layout = loader.load();
+		Scene scene = new Scene(layout);
+		stage.setScene(scene);
+		stage.centerOnScreen();
+		FrameCondominioController.stage = stage;
+
+	}
+
+	public static void getTela() throws Exception {
+		iniciarTela();
+
+		stage.show();
+
+		stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+
+			@Override
+			public void handle(final WindowEvent arg0) {
+				MenuPrincipalController.stage.setOpacity(1);
+
+			}
+		});
+
+	}
+
 }
