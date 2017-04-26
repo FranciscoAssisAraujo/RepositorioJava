@@ -14,11 +14,6 @@
               <MenuItem fx:id="incluirMenuItem" mnemonicParsing="false" onAction="#incluir" text="Incluir" />
             </items>
           </Menu>
-          <Menu fx:id="excluirMenu" mnemonicParsing="false" text="Excluir">
-            <items>
-              <MenuItem fx:id="excluirMenuItem" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
-            </items>
-          </Menu>
             <Menu fx:id="editarMenu" mnemonicParsing="false" text="Editar">
               <items>
                 <MenuItem fx:id="editarMenuItem" mnemonicParsing="false" onAction="#editar" text="Editar" />
@@ -36,8 +31,8 @@
          <children>
             <Label layoutX="32.0" layoutY="27.0" text="ID: " />
             <TextField fx:id="idTextField" editable="false" layoutX="56.0" layoutY="23.0" prefHeight="25.0" prefWidth="66.0" />
-            <Label layoutX="256.0" layoutY="27.0" text="CNPJ:" />
-            <TextField fx:id="cnpjTextField" editable="false" layoutX="296.0" layoutY="23.0" />
+            <Label layoutX="162.0" layoutY="27.0" text="CNPJ:" />
+            <TextField fx:id="cnpjTextField" editable="false" layoutX="205.0" layoutY="23.0" />
             <Label layoutX="38.0" layoutY="71.0" text="Nome:" />
             <TextField fx:id="nomeTexteField" editable="false" layoutX="94.0" layoutY="67.0" prefHeight="25.0" prefWidth="474.0" />
             <Label layoutX="35.0" layoutY="127.0" text="Endereço :" />
@@ -48,6 +43,9 @@
             <TextField fx:id="enderecoTexteField" editable="false" layoutX="98.0" layoutY="123.0" prefHeight="25.0" prefWidth="467.0" />
             <TextField fx:id="sindicoTextField" editable="false" layoutX="76.0" layoutY="181.0" prefHeight="25.0" prefWidth="203.0" />
             <TextField fx:id="subSindicoTextField" editable="false" layoutX="358.0" layoutY="181.0" prefHeight="25.0" prefWidth="203.0" />
+            <Label layoutX="452.0" layoutY="27.0" text="Unidades:" />
+            <TextField fx:id="unidadesTextField" layoutX="515.0" layoutY="23.0" prefHeight="25.0" prefWidth="39.0" />
+            <Button fx:id="pesquisarCondominio" layoutX="358.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="17.0" text="Button" />
          </children>
       </Pane>
       <Button fx:id="buttonSalvar" layoutX="431.0" layoutY="365.0" mnemonicParsing="false" text="Salvar" />

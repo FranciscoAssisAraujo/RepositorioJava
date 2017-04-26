@@ -13,20 +13,20 @@ public class MainTeste {
 		Persistencia pt = new Persistencia();
 		
 		CondominioPO cvo = new CondominioPO();
-		long x = 1;
-		cvo.setId(x);
-//		cvo.setCnpj("123.234.654-88");
-//		cvo.setConselheirofiscal("Sandra");
-//		cvo.setEndereco("Rua Itapemirim, 463");
-//		cvo.setNome("Condominio Santo Antonio");
-//		cvo.setSubsindico("Leonardo Evangelista de Araujo");
-//		cvo.setUnidades(6);
+	//	long x = 1;
+	//	cvo.setId(x);
+		cvo.setCnpj("123.234.654-88");
+		cvo.setConselheirofiscal("Sandra");
+	cvo.setEndereco("Rua Itapemirim, 463");
+	cvo.setNome("Condominio Santo Antonio");
+	cvo.setSubsindico("Leonardo Evangelista de Araujo");
+		cvo.setUnidades(6);
 		
-//		pt.Save(cvo);
+		pt.Save(cvo);
 		
-		pt.Delete(cvo);
+	//	pt.Delete(cvo);
 		
-//			cvo = (CondominioVO) pt.GetObj(cvo, cvo.getId());
+//		cvo = (CondominioVO) pt.GetObj(cvo, cvo.getId());
 //			System.out.println(cvo.getNome());
 		
 	}

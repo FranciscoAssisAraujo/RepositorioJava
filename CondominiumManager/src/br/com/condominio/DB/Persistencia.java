@@ -11,10 +11,10 @@ import org.hibernate.Transaction;
 public class Persistencia {
 
 	Session session = HibernateUtil.getSessionFactory().openSession();
-
+ 
 	Transaction transaction = null;
 
-	public void Save(Object obj) {
+	public  void Save(Object obj) {
 		try {
 			transaction = session.beginTransaction();
 			session.save(obj);
