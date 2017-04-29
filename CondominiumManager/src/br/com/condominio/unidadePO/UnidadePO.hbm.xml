@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 28/04/2017 23:05:22 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="br.com.condominio.unidadePO.UnidadePO" table="TB_UNIDADEPO">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="bloco" class="br.com.condominio.blocoPO.BlocoPO" fetch="join">
+            <column name="BLOCO" />
+        </many-to-one>
+        <property name="andar" type="java.lang.String">
+            <column name="ANDAR" />
+        </property>
+        <property name="apartamento" type="java.lang.String">
+            <column name="APARTAMENTO" />
+        </property>
+        <many-to-one name="condomino" class="br.com.condominio.condominoPO.CondominoPO" fetch="join">
+            <column name="CONDOMINO" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
