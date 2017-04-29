@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 28/04/2017 23:05:22 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="br.com.condominio.condominoPO.CondominoPO" table="TB_CONDOMINOPO">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="nome" type="java.lang.String">
+            <column name="NOME" />
+        </property>
+        <set name="unidadepo" table="UNIDADEPO" inverse="false" lazy="true">
+            <key>
+                <column name="ID" />
+            </key>
+            <one-to-many class="br.com.condominio.unidadePO.UnidadePO" />
+        </set>
+    </class>
+</hibernate-mapping>
