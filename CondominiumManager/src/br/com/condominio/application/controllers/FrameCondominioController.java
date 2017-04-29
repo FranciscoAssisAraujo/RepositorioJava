@@ -188,7 +188,7 @@ public class FrameCondominioController implements Initializable {
 
 			@Override
 			public void handle(final WindowEvent arg0) {
-				MenuPrincipalController.stage.setOpacity(1);
+				FrameMenuPrincipalController.stage.setOpacity(1);
 
 			}
 		});

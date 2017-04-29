@@ -14,12 +14,12 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class MenuPrincipalController implements Initializable {
+public class FrameMenuPrincipalController implements Initializable {
 	public static Stage stage;
 
 	@FXML
 	void openFrame(ActionEvent event) throws Exception {
-		MenuPrincipalController.stage.setOpacity(0);
+		FrameMenuPrincipalController.stage.setOpacity(0);
 		FrameCondominioController.getTela();
 
 	}
@@ -33,7 +33,7 @@ public class MenuPrincipalController implements Initializable {
 		AnchorPane layout = loader.load();
 		Scene scene = new Scene(layout);
 		stage.setScene(scene);
-		MenuPrincipalController.stage = stage;
+		FrameMenuPrincipalController.stage = stage;
 	}
 
 	public static void getTela() throws Exception {

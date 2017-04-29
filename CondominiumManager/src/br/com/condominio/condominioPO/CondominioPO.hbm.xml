@@ -1,33 +1,39 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 25/04/2017 17:56:48 by Hibernate Tools 3.5.0.Final -->
-<hibernate-mapping auto-import="false">
- <class name="br.com.condominio.condominioPO.CondominioPO" table="CONDOMINIOVO">
-  <id name="id" type="java.lang.Long">
-   <column name="ID" />
-   <generator class="increment" />
-  </id> 
-  <property generated="never" lazy="false" name="nome" type="java.lang.String">
-   <column name="NOME"/>
-  </property>
-  <property generated="never" lazy="false" name="cnpj" type="java.lang.String">
-   <column name="CNPJ"/>
-  </property>
-  <property generated="never" lazy="false" name="endereco" type="java.lang.String">
-   <column name="ENDERECO"/>
-  </property>
-  <property generated="never" lazy="false" name="unidades" type="java.lang.Integer">
-   <column name="UNIDADES"/>
-  </property>
-  <property generated="never" lazy="false" name="sindico" type="java.lang.String">
-   <column name="SINDICO"/>
-  </property>
-  <property generated="never" lazy="false" name="subsindico" type="java.lang.String">
-   <column name="SUBSINDICO"/>
-  </property>
-  <property generated="never" lazy="false" name="conselheirofiscal" type="java.lang.String">
-   <column name="CONSELHEIROFISCAL"/>
-  </property>
- </class>
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 28/04/2017 23:05:22 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="br.com.condominio.condominioPO.CondominioPO" table="TB_CONDOMINIOPO">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="nome" type="java.lang.String">
+            <column name="NOME" />
+        </property>
+        <property name="cnpj" type="java.lang.String">
+            <column name="CNPJ" />
+        </property>
+        <property name="endereco" type="java.lang.String">
+            <column name="ENDERECO" />
+        </property>
+        <property name="unidades" type="java.lang.Integer">
+            <column name="UNIDADES" />
+        </property>
+        <property name="sindico" type="java.lang.String">
+            <column name="SINDICO" />
+        </property>
+        <property name="subsindico" type="java.lang.String">
+            <column name="SUBSINDICO" />
+        </property>
+        <property name="conselheirofiscal" type="java.lang.String">
+            <column name="CONSELHEIROFISCAL" />
+        </property>
+        <set name="blocopo" table="BLOCOPO" inverse="false" lazy="true">
+            <key>
+                <column name="ID" />
+            </key>
+            <one-to-many class="br.com.condominio.blocoPO.BlocoPO" />
+        </set>
+    </class>
 </hibernate-mapping>
