@@ -16,6 +16,6 @@
   <mapping resource="br/com/condominio/blocoPO/BlocoPO.hbm.xml"/>
   <mapping resource="br/com/condominio/unidadePO/UnidadePO.hbm.xml"/>
   <mapping resource="br/com/condominio/condominoPO/CondominoPO.hbm.xml"/>
-  
+ 
  </session-factory>
 </hibernate-configuration>
