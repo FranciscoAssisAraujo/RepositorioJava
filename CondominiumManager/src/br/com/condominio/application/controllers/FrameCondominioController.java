@@ -4,6 +4,8 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+import javax.persistence.Id;
+
 import br.com.condominio.DB.Persistencia;
 import br.com.condominio.application.Main;
 import br.com.condominio.application.paths.Path;
@@ -75,67 +77,20 @@ public class FrameCondominioController implements Initializable {
 	void incluir(ActionEvent event) {
 
 		habilitarCampos(true);
-		botoes(true);
-		buttonSalvar.setOnAction(new EventHandler<ActionEvent>() {
+		botoesSalvarCancelar(true);
 
-			@Override
-			public void handle(ActionEvent event) {
-
-				Alert alert = new Alert(AlertType.CONFIRMATION);
-				alert.setTitle("Deseja Incluir Este Condominio");
-				alert.setHeaderText("Deseja Incluir Este Condominio");
-
-				Optional<ButtonType> result = alert.showAndWait();
-				if (result.get() == ButtonType.OK) {
-					CondominioPO cd = new CondominioPO();
-					pt.Save(setAtributos(cd));
-					habilitarCampos(false);
-					botoes(false);
-				} else {
-					botoes(false);
-				}
-
-			}
-		});
-		buttonCancelar.setOnAction(new EventHandler<ActionEvent>() {
-
-			@Override
-			public void handle(ActionEvent event) {
-				habilitarCampos(false);
-				botoes(false);
-
-			}
-		});
 	}
 
 	@FXML
 	void editar(ActionEvent event) {
+		botoesSalvarCancelar(true);
 		idTextField.setEditable(true);
 		cnpjTextField.setEditable(true);
 		pesquisarCondominio.setVisible(true);
-		pesquisarCondominio.setOnAction(new EventHandler<ActionEvent>() {
-
-			@Override
-			public void handle(ActionEvent event) {
-				CondominioPO s = new CondominioPO();
-				s.setId(Long.parseLong(idTextField.getText()));
-				s = (CondominioPO) pt.GetObj(s, s.getId());
-				idTextField.setPromptText(String.valueOf(s.getId()));
-				cnpjTextField.setPromptText(s.getCnpj());
-				nomeTexteField.setPromptText(s.getNome());
-				enderecoTexteField.setPromptText(s.getEndereco());
-				subSindicoTextField.setPromptText(s.getSubsindico());
-				sindicoTextField.setPromptText(s.getSindico());
-				unidadesTextField.setPromptText(String.valueOf(s.getUnidades()));
-				conselhoFiscalTextArea.setPromptText(s.getConselheirofiscal());
-
-			}
-
-		});
 
 	}
 
-	public void habilitarCampos(boolean on) {
+	private void habilitarCampos(boolean on) {
 		nomeTexteField.setEditable(on);
 		enderecoTexteField.setEditable(on);
 		cnpjTextField.setEditable(on);
@@ -144,7 +99,7 @@ public class FrameCondominioController implements Initializable {
 		conselhoFiscalTextArea.setEditable(on);
 	}
 
-	public CondominioPO setAtributos(CondominioPO cond) {
+	private CondominioPO setCondominio(CondominioPO cond) {
 		cond.setCnpj(cnpjTextField.getText());
 		cond.setConselheirofiscal(conselhoFiscalTextArea.getText());
 		cond.setEndereco(enderecoTexteField.getText());
@@ -155,9 +110,20 @@ public class FrameCondominioController implements Initializable {
 		return cond;
 	}
 
-	public void botoes(boolean on) {
+	private void botoesSalvarCancelar(boolean on) {
 		buttonCancelar.setVisible(on);
 		buttonSalvar.setVisible(on);
+	}
+
+	private void setarCampos(CondominioPO s) {
+		idTextField.setText(String.valueOf(s.getId()));
+		cnpjTextField.setText(s.getCnpj());
+		nomeTexteField.setText(s.getNome());
+		enderecoTexteField.setText(s.getEndereco());
+		subSindicoTextField.setText(s.getSubsindico());
+		sindicoTextField.setText(s.getSindico());
+		unidadesTextField.setText(String.valueOf(s.getUnidades()));
+		conselhoFiscalTextArea.setText(s.getConselheirofiscal());
 	}
 
 	@Override
@@ -188,7 +154,7 @@ public class FrameCondominioController implements Initializable {
 
 			@Override
 			public void handle(final WindowEvent arg0) {
-				MenuPrincipalController.stage.setOpacity(1);
+				FrameMenuPrincipalController.stage.setOpacity(1);
 
 			}
 		});

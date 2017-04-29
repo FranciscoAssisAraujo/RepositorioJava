@@ -60,6 +60,7 @@ public class Persistencia {
 	public Object GetObj(Object obj, Long id) {
 		 return session.load(obj.getClass(), id);		
 	}
+	
 
 
 }
