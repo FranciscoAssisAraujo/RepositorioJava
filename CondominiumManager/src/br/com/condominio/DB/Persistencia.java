@@ -1,9 +1,5 @@
 package br.com.condominio.DB;
 
-import java.util.Objects;
-
-import javax.management.ObjectName;
-
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

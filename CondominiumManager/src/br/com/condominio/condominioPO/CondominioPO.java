@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import br.com.condominio.blocoPO.BlocoPO;
-import br.com.condominio.unidadePO.UnidadePO;
 
 public class CondominioPO {	
 	private Long id;	

@@ -1,7 +1,5 @@
 package br.com.condominio.application;
 
-import org.hibernate.HibernateException;
-
 import br.com.condominio.DB.Persistencia;
 import br.com.condominio.blocoPO.BlocoPO;
 import br.com.condominio.condominioPO.CondominioPO;

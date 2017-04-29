@@ -183,6 +183,7 @@ public class CondominioManagerMenuPrincipalController implements Initializable {
 
 	private void setarCondominio() {
 		CondominioPO s = new CondominioPO();
+		
 		s = (CondominioPO) pt.GetObj(s, Long.parseLong(idTextField.getText()));
 		idTextField.setText(String.valueOf(s.getId()));
 		cnpjTextField.setText(s.getCnpj());

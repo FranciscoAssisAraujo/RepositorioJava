@@ -1,7 +1,6 @@
 package br.com.condominio.unidadePO;
 
 import br.com.condominio.blocoPO.BlocoPO;
-import br.com.condominio.condominioPO.CondominioPO;
 import br.com.condominio.condominoPO.CondominoPO;
 
 public class UnidadePO {

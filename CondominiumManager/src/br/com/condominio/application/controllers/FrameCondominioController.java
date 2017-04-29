@@ -1,10 +1,7 @@
 package br.com.condominio.application.controllers;
 
 import java.net.URL;
-import java.util.Optional;
 import java.util.ResourceBundle;
-
-import javax.persistence.Id;
 
 import br.com.condominio.DB.Persistencia;
 import br.com.condominio.application.Main;
@@ -16,10 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
