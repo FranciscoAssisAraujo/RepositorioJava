@@ -1,5 +1,11 @@
 package br.com.condominio.condominioPO;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import br.com.condominio.blocoPO.BlocoPO;
+import br.com.condominio.unidadePO.UnidadePO;
+
 public class CondominioPO {	
 	private Long id;	
 	private String nome;		
@@ -9,6 +15,8 @@ public class CondominioPO {
 	private String sindico;		
 	private String subsindico;		
 	private String conselheirofiscal;
+	private Set<BlocoPO> blocopo =
+			new HashSet<BlocoPO>(0);
 	
 	public Long getId() {
 		return id;
@@ -58,6 +66,13 @@ public class CondominioPO {
 	public void setConselheirofiscal(String conselheirofiscal) {
 		this.conselheirofiscal = conselheirofiscal;
 	}
+	public Set<BlocoPO> getBlocopo() {
+		return blocopo;
+	}
+	public void setBlocopo(Set<BlocoPO> blocopo) {
+		this.blocopo = blocopo;
+	}
+	
 	
 	
 }
