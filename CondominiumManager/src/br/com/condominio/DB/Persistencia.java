@@ -24,7 +24,7 @@ public class Persistencia {
 			transaction.rollback();
 			e.printStackTrace();
 		} finally {
-			session.close();
+			
 		}
 
 	}
@@ -39,7 +39,7 @@ public class Persistencia {
 			e.printStackTrace();
 		} finally {
 			System.out.println("Registro Excluido!!!!");
-			session.close();
+			
 		}
 
 	}
@@ -53,7 +53,7 @@ public class Persistencia {
 			transaction.rollback();
 			e.printStackTrace();
 		} finally {
-			session.close();
+			
 		}
 
 	}
